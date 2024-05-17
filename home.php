@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/destinos.css">
     <title>BellaItalia</title>
 </head>
 
@@ -27,19 +28,45 @@
             &#8250;
         </button>
         <ul class="slides-container" id="slides-container">
-            <li class="slide"><img src="Assets/coliseu.jpg" alt=""></li>
-            <li class="slide"><img src="Assets/milao.jpg" alt=""></li>
-            <li class="slide"><img src="Assets/veneza.jpg" alt=""></li>
-            <li class="slide"><img src="Assets/imagem.jpg" alt=""></li>
-            <li class="slide"><img src="Assets/piza.jpg" alt=""></li>
+            <li class="slide" id="coliseu"></li>
+            <li class="slide" id="milao"></li>
+            <li class="slide" id="veneza"></li>
+            <li class="slide" id="piza"></li>
+            <li class="slide" id="cidade-aleatoria"></li>
         </ul>
     </section>
 
     <section>
-        <div>hello eword</div>
+        <h1>DESTINOS MAIS DESEJADOS</h1>
+        <div class="container">
+            <div class="card">
+                <img src="Assets/destinoRoma.jpg" alt="Roma">
+                <div class="info">
+                    <h2>Roma</h2>
+                    <p>Roma é a capital da Itália e uma das cidades mais antigas do mundo, cheia de história e cultura.</p>
+                </div>
+                <a href="pacotes.php" class="btn">Ver mais</a>
+            </div>
+            <div class="card">
+                <img src="Assets/destinoVeneza.jpg" alt="Veneza">
+                <div class="info">
+                    <h2>Veneza</h2>
+                    <p>Veneza é famosa por seus canais, gôndolas e sua arquitetura única.</p>
+                </div>
+                <a href="pacotes.php" class="btn">Ver mais</a>
+            </div>
+            <div class="card">
+                <img src="Assets/destinoFlorenza.jpg" alt="Florença">
+                <div class="info">
+                    <h2>Florença</h2>
+                    <p>Florença é conhecida por sua arte renascentista e monumentos históricos.</p>
+                </div>
+                <a href="pacotes.php" class="btn">Ver mais</a>
+            </div>
+        </div>
     </section>
 
-    <script src="carrosel.js"></script>
+    <script src="js/carrosel.js"></script>
 </body>
 
 </html>
