@@ -45,7 +45,7 @@
                     <h2>Roma</h2>
                     <p>Roma é a capital da Itália e uma das cidades mais antigas do mundo, cheia de história e cultura.</p>
                 </div>
-                <a href="pacotes.php" class="btn">Ver mais</a>
+                <a href="pacotes.php" class="btn">Comprar $</a>
             </div>
             <div class="card">
                 <img src="Assets/destinoVeneza.jpg" alt="Veneza">
@@ -53,7 +53,7 @@
                     <h2>Veneza</h2>
                     <p>Veneza é famosa por seus canais, gôndolas e sua arquitetura única.</p>
                 </div>
-                <a href="pacotes.php" class="btn">Ver mais</a>
+                <a href="pacotes.php" class="btn">Comprar $</a>
             </div>
             <div class="card">
                 <img src="Assets/destinoFlorenza.jpg" alt="Florença">
@@ -61,7 +61,7 @@
                     <h2>Florença</h2>
                     <p>Florença é conhecida por sua arte renascentista e monumentos históricos.</p>
                 </div>
-                <a href="pacotes.php" class="btn">Ver mais</a>
+                <a href="pacotes.php" class="btn">Comprar $</a>
             </div>
         </div>
     </section>
