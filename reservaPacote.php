@@ -21,7 +21,7 @@
         </div>
     </div>
     <div class="formReserva" id="reserva">
-        <form id="regForm" action="inserir_dados.php" method="post" class="formulario">
+        <form id="regForm" action="listarReservas.php" method="post" class="formulario">
             <div class="tab">
                 <h1>Seu Dados</h1>
                 Nome: <input class="input-box" type="text" name="nome_cliente" placeholder="Digite seu nome" required><br>
