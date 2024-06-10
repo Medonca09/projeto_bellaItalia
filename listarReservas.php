@@ -42,6 +42,7 @@ $dados = [
                         <th>Nome Destino</th>
                         <th>Região</th>
                         <th>Turismo</th>
+                        <th>ID hotel</th>
                         <th>Nome do Hotel</th>
                         <th>Cidade do Hotel</th>
                         <th>Dias de Hospedagem</th>
@@ -75,6 +76,7 @@ $dados = [
                     }
 
                     if (isset($dados['hoteis'][$i])) {
+                        /* echo "<td>" . $dados['hoteis'][$i]['id_hotel'] . "</td>"; */
                         echo "<td>" . $dados['hoteis'][$i]['nome_hotel'] . "</td>";
                         echo "<td>" . $dados['hoteis'][$i]['cidade_hotel'] . "</td>";
                         echo "<td>" . $dados['hoteis'][$i]['dias_hospedagem'] . "</td>";
@@ -86,7 +88,8 @@ $dados = [
 
                     echo "<td class='action-icons'>";
                     echo "<a href='editar.php?id=" . $i . "'><i class='fas fa-pen'></i></a>";
-                    echo "<a href='deletar.php?id=" . $i . "'><i class='fas fa-trash'></i></a>";
+                    echo "<a href='deletar.php?id_cliente=" . $dados['clientes'][$i]['id_cliente'] . "&id_destino=" . $dados['destinos'][$i]['id_destino'] . "&id_hotel=" . $dados['hoteis'][$i]['id_hotel'] . "'><i class='fas fa-trash'></i></a>";
+
                     echo "</td>";
 
                     echo "</tr>";
