@@ -18,7 +18,6 @@
         <br><br>
 
         <div id="campos_cliente" style="display: none;">
-            <!-- Campos para atualização de cliente -->
             <label for="id_cliente">ID do Cliente:</label>
             <input type="text" name="id_cliente">
             <br><br>
@@ -34,7 +33,6 @@
         </div>
 
         <div id="campos_destino" style="display: none;">
-            <!-- Campos para atualização de destino -->
             <label for="id_destino">ID do Destino:</label>
             <input type="text" name="id_destino">
             <br><br>
@@ -50,7 +48,6 @@
         </div>
 
         <div id="campos_hotel" style="display: none;">
-            <!-- Campos para atualização de hotel -->
             <label for="id_hotel">ID do Hotel:</label>
             <input type="text" name="id_hotel">
             <br><br>
@@ -74,22 +71,7 @@
         <input type="submit" value="Atualizar Dados">
     </form>
 
-    <script>
-        // Função para exibir os campos correspondentes ao tipo de dados selecionado
-        document.getElementById('tipo_dados').addEventListener('change', function() {
-            var tipo = this.value;
-            document.getElementById('campos_cliente').style.display = 'none';
-            document.getElementById('campos_destino').style.display = 'none';
-            document.getElementById('campos_hotel').style.display = 'none';
-
-            if (tipo === 'cliente') {
-                document.getElementById('campos_cliente').style.display = 'block';
-            } else if (tipo === 'destino') {
-                document.getElementById('campos_destino').style.display = 'block';
-            } else if (tipo === 'hotel') {
-                document.getElementById('campos_hotel').style.display = 'block';
-            }
-        });
+    <script src="./js/functionEditar.js">
     </script>
 </body>
 </html>

@@ -64,10 +64,10 @@
 }
 
 .info-table{
-    margin: 10px 70px 70px;
+    margin: 5px 20px 20px;
     box-shadow: 0px 30px 50px rgba( 0, 0, 0, 0.2 );
-	width: 80%;
-	margin-top: 6rem;
+	/* width: 100%; */
+	margin-top: 4rem;
 }
 
 .fl-table {
@@ -93,14 +93,14 @@
 }
 
 .fl-table thead th {
-    color: #333;
-    background: #FFF;
+    color: #fffefe;
+    background: #000000;
 }
 
 
 .fl-table thead th:nth-child(odd) {
-    color: #333;
-    background: #ddd;
+    color: #FFF;
+    background: #161616;
 }
 
 .fl-table tr:nth-child(even) {
@@ -115,9 +115,21 @@
 
 .action-icons a {
     text-decoration: none;
-    color: black;
+    /* color: black; */
 }
 
-.action-icons a:hover {
-    color: blue;
+.fa-pen{
+	color: #f9f504;
+}
+
+.fa-pen:hover {
+    color: rgb(255, 136, 0);
+}
+
+.fa-trash{
+	color: #ed0000;
+}
+
+.fa-trash:hover{
+	color: #870303;
 }
