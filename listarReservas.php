@@ -1,5 +1,7 @@
 <?php
+
 include 'inserir_dados.php';
+
 $dados = [
     'clientes' => listarClientes(),
     'destinos' => listarDestinos(),
@@ -76,19 +78,19 @@ $dados = [
                     }
 
                     if (isset($dados['hoteis'][$i])) {
-                        /* echo "<td>" . $dados['hoteis'][$i]['id_hotel'] . "</td>"; */
-                        echo "<td>" . $dados['hoteis'][$i]['nome_hotel'] . "</td>";
-                        echo "<td>" . $dados['hoteis'][$i]['cidade_hotel'] . "</td>";
-                        echo "<td>" . $dados['hoteis'][$i]['dias_hospedagem'] . "</td>";
-                        echo "<td>" . $dados['hoteis'][$i]['data_chegada'] . "</td>";
-                        echo "<td>" . $dados['hoteis'][$i]['data_saida'] . "</td>";
+                        echo "<td>" . (isset($dados['hoteis'][$i]['id_hotel']) ? $dados['hoteis'][$i]['id_hotel'] : '') . "</td>";
+                        echo "<td>" . (isset($dados['hoteis'][$i]['nome_hotel']) ? $dados['hoteis'][$i]['nome_hotel'] : '') . "</td>";
+                        echo "<td>" . (isset($dados['hoteis'][$i]['cidade_hotel']) ? $dados['hoteis'][$i]['cidade_hotel'] : '') . "</td>";
+                        echo "<td>" . (isset($dados['hoteis'][$i]['dias_hospedagem']) ? $dados['hoteis'][$i]['dias_hospedagem'] : '') . "</td>";
+                        echo "<td>" . (isset($dados['hoteis'][$i]['data_chegada']) ? $dados['hoteis'][$i]['data_chegada'] : '') . "</td>";
+                        echo "<td>" . (isset($dados['hoteis'][$i]['data_saida']) ? $dados['hoteis'][$i]['data_saida'] : '') . "</td>";
                     } else {
-                        echo "<td colspan='5'></td>";
+                        echo "<td colspan='6'></td>";
                     }
 
                     echo "<td class='action-icons'>";
                     echo "<a href='editar.php?id=" . $i . "'><i class='fas fa-pen'></i></a>";
-                    echo "<a href='deletar.php?id_cliente=" . $dados['clientes'][$i]['id_cliente'] . "&id_destino=" . $dados['destinos'][$i]['id_destino'] . "&id_hotel=" . $dados['hoteis'][$i]['id_hotel'] . "'><i class='fas fa-trash'></i></a>";
+                    echo "<a href='deletar.php?id=" . $i . "'><i class='fas fa-trash'></i></a>";
 
                     echo "</td>";
 

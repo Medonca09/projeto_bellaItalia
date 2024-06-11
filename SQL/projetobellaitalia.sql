@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 09-Jun-2024 às 22:57
+-- Generation Time: 11-Jun-2024 às 03:58
 -- Versão do servidor: 10.1.36-MariaDB
 -- versão do PHP: 7.2.11
 
@@ -40,8 +40,7 @@ CREATE TABLE `cliente` (
 --
 
 INSERT INTO `cliente` (`id_cliente`, `nome`, `cpf`, `email`) VALUES
-(1, 'João Silva', '123.456.789-00', 'joao.silva@gmail.com'),
-(2, 'João Silva', '123.456.789-00', 'joao.silva@gmail.com');
+(1, 'João Silva', '123.456.789-00', 'joao.silva@example.com');
 
 -- --------------------------------------------------------
 
@@ -61,8 +60,7 @@ CREATE TABLE `destino` (
 --
 
 INSERT INTO `destino` (`id_destino`, `nome_destino`, `regiao`, `turismo`) VALUES
-(1, 'Milão', 'Norte', 'Praias, Estádio San Siro'),
-(2, 'Milão', 'Norte', 'Praias, Estádio San Siro');
+(1, 'Rio de Janeiro', 'Sudeste', 'Praias, Pão de Açúcar, Cristo Redentor');
 
 -- --------------------------------------------------------
 
@@ -84,8 +82,7 @@ CREATE TABLE `hotel` (
 --
 
 INSERT INTO `hotel` (`id_hotel`, `nome_hotel`, `cidade_hotel`, `dias_hospedagem`, `data_chegada`, `data_saida`) VALUES
-(1, 'Hotel dDa Vinci', 'Milão', 5, '2024-06-01', '2024-06-06'),
-(2, 'Hotel dDa Vinci', 'Milão', 5, '2024-06-01', '2024-06-06');
+(1, 'Hotel Copacabana Palace', 'Rio de Janeiro', 5, '2024-06-01', '2024-06-06');
 
 --
 -- Indexes for dumped tables
@@ -117,19 +114,19 @@ ALTER TABLE `hotel`
 -- AUTO_INCREMENT for table `cliente`
 --
 ALTER TABLE `cliente`
-  MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `destino`
 --
 ALTER TABLE `destino`
-  MODIFY `id_destino` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_destino` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `hotel`
 --
 ALTER TABLE `hotel`
-  MODIFY `id_hotel` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_hotel` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

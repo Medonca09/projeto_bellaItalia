@@ -1,5 +1,5 @@
 <?php
-include 'inserir_dados.php';
+include 'conexao.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $conn = conectarBanco();
@@ -37,6 +37,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if (isset($sql) && $conn->query($sql) === TRUE) {
         echo "Dados atualizados com sucesso!";
+        echo "<a href='listarReservas.php'>Voltar</a>";
+
     } else {
         echo "Erro ao atualizar dados: " . $conn->error;
     }

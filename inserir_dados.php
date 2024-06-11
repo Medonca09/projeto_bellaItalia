@@ -1,18 +1,6 @@
 <?php
-function conectarBanco()
-{
-    $servername = 'localhost';
-    $username = 'root';
-    $password = '';
-    $dbname = 'projetobellaitalia';
 
-    $conn = new mysqli($servername, $username, $password, $dbname);
-
-    if ($conn->connect_error) {
-        die("Falha na conexão: " . $conn->connect_error);
-    }
-    return $conn;
-}
+include "conexao.php";
 
 function listarClientes()
 {
@@ -49,7 +37,7 @@ function listarDestinos()
 function listarHoteis()
 {
     $conn = conectarBanco();
-    $sql = "SELECT nome_hotel, cidade_hotel, dias_hospedagem, data_chegada, data_saida FROM Hotel";
+    $sql = "SELECT id_hotel nome_hotel, cidade_hotel, dias_hospedagem, data_chegada, data_saida FROM Hotel";
     $result = $conn->query($sql);
 
     $hoteis = [];
@@ -108,4 +96,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $conn->close();
 }
-?>

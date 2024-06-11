@@ -64,10 +64,10 @@
             <input type="text" name="dias_hospedagem">
             <br><br>
             <label for="data_chegada">Data de Chegada:</label>
-            <input type="text" name="data_chegada">
+            <input type="date" name="data_chegada">
             <br><br>
             <label for="data_saida">Data de Saída:</label>
-            <input type="text" name="data_saida">
+            <input type="date" name="data_saida">
             <br><br>
         </div>
 
