@@ -36,9 +36,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     if (isset($sql) && $conn->query($sql) === TRUE) {
-        echo "Dados atualizados com sucesso!";
-        echo "<a href='listarReservas.php'>Voltar</a>";
-
+        /* echo "Dados atualizados com sucesso!"; */
+        /* echo "<a href='listarReservas.php'>Voltar</a>"; */
     } else {
         echo "Erro ao atualizar dados: " . $conn->error;
     }
@@ -46,3 +45,38 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $conn->close();
 }
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/editar.css">
+    <title>Atualizou</title>
+</head>
+
+<body>
+    <div class="nav">
+        <div class="navBar">
+            <h1>BELLAITALIA TOURS</h1>
+            <div class="links">
+                <a href="./home.php">Home</a>
+                <a href="#news">Sobre</a>
+                <a href="#contact">Pacotes</a>
+            </div>
+        </div>
+    </div>
+    <div class="homeEditar">
+        <div class="fundo-Mensagem">
+            <div class="mensagem-atualizou">
+                <h1>Dados atualizados com sucesso</h1>
+            </div>
+        </div>
+        <div class="btn-button">
+            <a href="listarReservas.php" class="btn">Voltar</a>
+        </div>
+    </div>
+</body>
+
+</html>

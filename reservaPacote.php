@@ -39,7 +39,7 @@
             <div class="tab">
                 <h1>Reserva de Hotel</h1>
                 Nome do Hotel: <input class="input-box" type="text" name="nome_hotel" placeholder="Digite o nome do hotel" required><br>
-                Cidade do Hotel: <input class="input-box" type="text" name="cidade_hotel" placeholder="" required><br>
+                Cidade do Hotel: <input class="input-box" type="text" name="cidade_hotel" placeholder="Digite a cidade que do hotel" required><br>
                 Dias de Hospedagem: <input class="input-box" type="number" name="dias_hospedagem" required><br>
                 Data de Chegada: <input class="input-box" type="date" name="data_chegada" required><br>
                 Data de Saída: <input class="input-box" type="date" name="data_saida" required><br>
