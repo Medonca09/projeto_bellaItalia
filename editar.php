@@ -1,3 +1,22 @@
+<?php 
+
+include "inserir_dados.php";
+$tipo_dados = $_GET['tipo_dados'];
+$id = $_GET['id'];
+switch ($tipo_dados) {
+    case 'clientes':
+       $dados = visualizarCliente($id);
+       /* var_dump($dados); */
+        break;
+    
+    default:
+        # code...
+        break;
+}
+/* var_dump($tipo_dados); */
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -27,28 +46,28 @@
                     <label for="tipo_dados" id="label">Selecione o tipo de dados:</label>
                     <select name="tipo_dados" id="tipo_dados">
                         <option value=""></option>
-                        <option value="cliente">Cliente</option>
-                        <option value="destino">Destino</option>
-                        <option value="hotel">Hotel</option>
+                        <option value="cliente" <?= $tipo_dados == 'clientes'? 'selected' : ''?>>Cliente</option>
+                        <option value="destino" <?= $tipo_dados == 'destino'? 'selected' : ''?>>Destino</option>
+                        <option value="hotel" <?= $tipo_dados == 'hotel'? 'selected' : ''?>>Hotel</option>
                     </select>
                     <br><br>
                 </div>
-                <div id="campos_cliente" style="display: none;">
+                <div id="campos_cliente" style="display: <?= $tipo_dados == 'clientes'? 'block' : 'none'?>">
                     <label for="id_cliente">ID do Cliente:</label>
-                    <input class="input-box" type="text" name="id_cliente">
+                    <input class="input-box" type="text" name="id_cliente" value="<?= isset($dados) ?$dados['id_cliente'] :""?>">
                     <br><br>
                     <label for="nome_cliente">Nome:</label>
-                    <input class="input-box" type="text" name="nome_cliente">
+                    <input class="input-box" type="text" name="nome_cliente" value="<?= isset($dados) ?$dados['nome'] :""?>">
                     <br><br>
                     <label for="cpf_cliente">CPF:</label>
-                    <input class="input-box" type="text" name="cpf_cliente">
+                    <input class="input-box" id="cpf" type="text" name="cpf_cliente" value="<?= isset($dados) ?$dados['cpf'] :""?>">
                     <br><br>
                     <label for="email_cliente">Email:</label>
-                    <input class="input-box" type="text" name="email_cliente">
+                    <input class="input-box" type="text" name="email_cliente" value="<?= isset($dados) ?$dados['email'] :""?>">
                     <br><br>
                 </div>
 
-                <div id="campos_destino" style="display: none;">
+                <div id="campos_destino" style="display: <?= $tipo_dados == 'destino'? 'block' : 'none'?>">
                     <label for="id_destino">ID do Destino:</label>
                     <input class="input-box" type="text" name="id_destino">
                     <br><br>
@@ -63,7 +82,7 @@
                     <br><br>
                 </div>
 
-                <div id="campos_hotel" style="display: none;">
+                <div id="campos_hotel" style="display: <?= $tipo_dados == 'hotel'? 'block' : 'none'?>">
                     <label for="id_hotel">ID do Hotel:</label>
                     <input class="input-box" type="text" name="id_hotel">
                     <br><br>
@@ -90,6 +109,7 @@
         </div>
     </div>
     <script src="JS/functionEditar.js"></script>
+    <script src="JS/mascaraCpf.js"></script>
 </body>
 
 </html>

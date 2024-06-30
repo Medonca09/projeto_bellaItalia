@@ -12,6 +12,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         if (!empty($id_cliente)) {
             $sql = "UPDATE Cliente SET nome='$nome', cpf='$cpf', email='$email' WHERE id_cliente='$id_cliente'";
+            /* $stmt = $conn->prepare($sql); */
+            /* $stmt->bind_param('sssi', $nome, $cpf, $email, $id_cliente); */
         }
     } elseif ($_POST['tipo_dados'] === 'destino') {
         $id_destino = $_POST['id_destino'];
@@ -20,7 +22,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $turismo = $_POST['turismo_destino'];
 
         if (!empty($id_destino)) {
-            $sql = "UPDATE Destino SET nome_destino='$nome_destino', regiao='$regiao', turismo='$turismo' WHERE id_destino='$id_destino'";
+            $sql = "UPDATE Destino SET nome_destino=?, regiao=?, turismo=? WHERE id_destino=?";
+            $stmt = $conn->prepare($sql);
+            $stmt->bind_param("sssi", $nome_destino, $regiao, $turismo, $id_destino);
         }
     } elseif ($_POST['tipo_dados'] === 'hotel') {
         $id_hotel = $_POST['id_hotel'];
@@ -31,52 +35,50 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $data_saida = $_POST['data_saida'];
 
         if (!empty($id_hotel)) {
-            $sql = "UPDATE Hotel SET nome_hotel='$nome_hotel', cidade_hotel='$cidade_hotel', dias_hospedagem='$dias_hospedagem', data_chegada='$data_chegada', data_saida='$data_saida' WHERE id_hotel='$id_hotel'";
+            $sql = "UPDATE Hotel SET nome_hotel=?, cidade_hotel=?, dias_hospedagem=?, data_chegada=?, data_saida=? WHERE id_hotel=?";
+            $stmt = $conn->prepare($sql);
+            $stmt->bind_param("ssisii", $nome_hotel, $cidade_hotel, $dias_hospedagem, $data_chegada, $data_saida, $id_hotel);
         }
     }
 
     if (isset($sql) && $conn->query($sql) === TRUE) {
-        /* echo "Dados atualizados com sucesso!"; */
-        /* echo "<a href='listarReservas.php'>Voltar</a>"; */
+        echo "<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <link rel='stylesheet' href='./css/editar.css'>
+    <title>Atualizou</title>
+</head>
+
+<body>
+    <div class='nav'>
+        <div class='navBar'>
+            <h1>BELLAITALIA TOURS</h1>
+            <div class='links'>
+                <a href='./home.php'>Home</a>
+                <a href='#news'>Sobre</a>
+                <a href='#contact'>Pacotes</a>
+            </div>
+        </div>
+    </div>
+    <div class='homeEditar'>
+        <div class='fundo-Mensagem'>
+            <div class='mensagem-atualizou'>
+                <h1>Dados atualizados com sucesso</h1>
+            </div>
+        </div>
+        <div class='btn-button'>
+            <a href='listarReservas.php' class='btn'>Voltar</a>
+        </div>
+    </div>
+</body>
+
+</html>";
     } else {
         echo "Erro ao atualizar dados: " . $conn->error;
     }
 
     $conn->close();
 }
-?>
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/editar.css">
-    <title>Atualizou</title>
-</head>
-
-<body>
-    <div class="nav">
-        <div class="navBar">
-            <h1>BELLAITALIA TOURS</h1>
-            <div class="links">
-                <a href="./home.php">Home</a>
-                <a href="#news">Sobre</a>
-                <a href="#contact">Pacotes</a>
-            </div>
-        </div>
-    </div>
-    <div class="homeEditar">
-        <div class="fundo-Mensagem">
-            <div class="mensagem-atualizou">
-                <h1>Dados atualizados com sucesso</h1>
-            </div>
-        </div>
-        <div class="btn-button">
-            <a href="listarReservas.php" class="btn">Voltar</a>
-        </div>
-    </div>
-</body>
-
-</html>

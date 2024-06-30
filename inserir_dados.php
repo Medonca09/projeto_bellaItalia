@@ -18,6 +18,23 @@ function listarClientes()
     return $clientes;
 }
 
+
+function visualizarCliente($id_cliente)
+{
+    $conn = conectarBanco();
+    $sql = "SELECT id_cliente, nome, cpf, email FROM Cliente WHERE id_cliente = '$id_cliente'";
+    $result = $conn->query($sql);
+
+    $clientes = [];
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            $clientes[] = $row;
+        }
+    }
+    $conn->close();
+    return count($clientes) > 0 ? $clientes[0] : [];
+}
+
 function listarDestinos()
 {
     $conn = conectarBanco();
@@ -37,7 +54,7 @@ function listarDestinos()
 function listarHoteis()
 {
     $conn = conectarBanco();
-    $sql = "SELECT id_hotel nome_hotel, cidade_hotel, dias_hospedagem, data_chegada, data_saida FROM Hotel";
+    $sql = "SELECT id_hotel, nome_hotel, cidade_hotel, dias_hospedagem, data_chegada, data_saida FROM Hotel";
     $result = $conn->query($sql);
 
     $hoteis = [];
