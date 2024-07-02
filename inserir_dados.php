@@ -51,6 +51,21 @@ function listarDestinos()
     return $destinos;
 }
 
+function visualizarDestino($id_destino){
+    $conn = conectarBanco();
+    $sql = "SELECT id_destino, nome_destino, regiao, turismo FROM Destino WHERE id_destino = '$id_destino'";
+    $result = $conn->query($sql);
+
+    $destinos = [];
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            $destinos[] = $row;
+        }
+    }
+    $conn->close();
+    return count($destinos) > 0 ? $destinos[0] : [];
+}
+
 function listarHoteis()
 {
     $conn = conectarBanco();
@@ -66,6 +81,22 @@ function listarHoteis()
     $conn->close();
     return $hoteis;
 }
+
+function visualizarHotel($id_hotel){
+    $conn = conectarBanco();
+    $sql = "SELECT id_hotel, nome_hotel, cidade_hotel, dias_hospedagem, data_chegada, data_saida FROM Hotel WHERE id_hotel = '$id_hotel'";
+    $result = $conn->query($sql);
+
+    $hoteis = [];
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            $hoteis[] = $row;
+        }
+    }
+    $conn->close();
+    return count($hoteis) > 0 ? $hoteis[0] : [];
+}
+
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $conn = conectarBanco();

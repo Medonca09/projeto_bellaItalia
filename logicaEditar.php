@@ -18,13 +18,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } elseif ($_POST['tipo_dados'] === 'destino') {
         $id_destino = $_POST['id_destino'];
         $nome_destino = $_POST['nome_destino'];
-        $regiao = $_POST['regiao_destino'];
-        $turismo = $_POST['turismo_destino'];
+        $regiao = $_POST['regiao'];
+        $turismo = $_POST['turismo'];
 
         if (!empty($id_destino)) {
-            $sql = "UPDATE Destino SET nome_destino=?, regiao=?, turismo=? WHERE id_destino=?";
-            $stmt = $conn->prepare($sql);
-            $stmt->bind_param("sssi", $nome_destino, $regiao, $turismo, $id_destino);
+            $sql = "UPDATE Destino SET nome_destino='$nome_destino', regiao='$regiao', turismo='$turismo' WHERE id_destino='$id_destino'";
+            /* $stmt = $conn->prepare($sql);
+            $stmt->bind_param("sssi", $nome_destino, $regiao, $turismo, $id_destino); */
         }
     } elseif ($_POST['tipo_dados'] === 'hotel') {
         $id_hotel = $_POST['id_hotel'];
@@ -35,9 +35,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $data_saida = $_POST['data_saida'];
 
         if (!empty($id_hotel)) {
-            $sql = "UPDATE Hotel SET nome_hotel=?, cidade_hotel=?, dias_hospedagem=?, data_chegada=?, data_saida=? WHERE id_hotel=?";
-            $stmt = $conn->prepare($sql);
-            $stmt->bind_param("ssisii", $nome_hotel, $cidade_hotel, $dias_hospedagem, $data_chegada, $data_saida, $id_hotel);
+            $sql = "UPDATE Hotel SET nome_hotel='$nome_hotel', cidade_hotel='$cidade_hotel', dias_hospedagem='$dias_hospedagem', data_chegada='$data_chegada', data_saida='$data_saida' WHERE id_hotel='$id_hotel'";
+            /* $stmt = $conn->prepare($sql);
+            $stmt->bind_param("ssisii", $nome_hotel, $cidade_hotel, $dias_hospedagem, $data_chegada, $data_saida, $id_hotel); */
         }
     }
 

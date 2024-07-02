@@ -81,7 +81,7 @@ $dados = [
                         echo "<td>" . $dados['destinos'][$i]['regiao'] . "</td>";
                         echo "<td>" . $dados['destinos'][$i]['turismo'] . "</td>";
                         echo "<td class='action-icons'>";
-                        echo "<a href='editar.php?id=" . $i . "'><i class='fas fa-pen'></i></a>";
+                        echo "<a href='editar.php?id=" . $dados['destinos'][$i]['id_destino'] . "&tipo_dados=destinos'><i class='fas fa-pen'></i></a>";
                         /* echo "<a href='deletar.php?id=" . $i . "'><i class='fas fa-trash'></i></a>"; */
 
                         echo "</td>";
@@ -94,14 +94,14 @@ $dados = [
                         echo "<td>" . (isset($dados['hoteis'][$i]['nome_hotel']) ? $dados['hoteis'][$i]['nome_hotel'] : '') . "</td>";
                         echo "<td>" . (isset($dados['hoteis'][$i]['cidade_hotel']) ? $dados['hoteis'][$i]['cidade_hotel'] : '') . "</td>";
                         echo "<td>" . (isset($dados['hoteis'][$i]['dias_hospedagem']) ? $dados['hoteis'][$i]['dias_hospedagem'] : '') . "</td>";
-                        echo "<td>" . (isset($dados['hoteis'][$i]['data_chegada']) ? date('d/m/Y', strtotime($dados['hoteis'][$i]['data_chegada'])) : '') . "</td>";
-                        echo "<td>" . (isset($dados['hoteis'][$i]['data_saida']) ? date('d/m/Y', strtotime($dados['hoteis'][$i]['data_saida'])) : '') . "</td>";
+                        echo "<td>" . (isset($dados['hoteis'][$i]['data_chegada']) ? date('Y/m/d', strtotime($dados['hoteis'][$i]['data_chegada'])) : '') . "</td>";
+                        echo "<td>" . (isset($dados['hoteis'][$i]['data_saida']) ? date('Y/m/d', strtotime($dados['hoteis'][$i]['data_saida'])) : '') . "</td>";
                     } else {
                         echo "<td colspan='6'></td>";
                     }
 
                     echo "<td class='action-icons'>";
-                    echo "<a href='editar.php?id=" . $i . "'><i class='fas fa-pen'></i></a>";
+                    echo "<a href='editar.php?id=" . $dados['hoteis'][$i]['id_hotel'] . "&tipo_dados=hoteis'><i class='fas fa-pen'></i></a>";
                     /* echo "<a href='deletar.php?id=" . $i . "'><i class='fas fa-trash'></i></a>"; */
 
                     echo "</td>";
